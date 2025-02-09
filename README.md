@@ -10,16 +10,34 @@ SIGHTED is a **privacy-preserving dApp** that integrates the **Internet Computer
    - Sends HTTPS POST requests to Calimero using **JSON-RPC** for balance checks and transaction verification.
    - Manages and tracks requests for real-time responses from Calimero.  
    
-2. **Calimero Backend (`Node.js`)**:  
+   This will act as an on-chain API for your NEAR/Calimero environment that interacts with the private shards through Calimero SDK.
+
+   Calimero JSON-RPC API: Used for data access, token verification, and shard communication.
+   NEAR RPC API: You can also combine NEAR APIs with Calimero-specific APIs to read or verify data stored on the Calimero shards.
+
+    Steps to Build an On-Chain API for NEAR/Calimero on ICP
+   ICP Canister with HTTPS Outcalls
+   Use Motoko to make HTTPS requests to Calimero's JSON-RPC or NEAR's RPC API.
+
+
+3. **Calimero Backend (`Node.js`)**:  
    - Implements a **JSON-RPC server** that processes requests from the ICP frontend.  
    - Handles **get_balance**, **verify_transaction**, and other data verification methods.  
+
+   Calimero Backend
+   Set up a Calimero API server that interacts with your NEAR on-chain data and processes requests.
+   Data Retrieval & Validation
+   Fetch and validate data from Calimero shards using RPC calls and return it to ICP.
 
 ---
 
 ## **Features**
 - **Privacy-Preserving Token Verification**: Uses Calimero private shards for transaction proofs.  
 - **Cross-Chain Communication**: Relays token balances and verification proofs via **ICP HTTPS outcalls**.  
-- **JSON-RPC API Support**: Enables seamless backend integration with Calimero.  
+- **JSON-RPC API Support**: Enables seamless backend integration with Calimero.
+
+
+
 
 ---
 
